@@ -1,0 +1,30 @@
+{
+  "name": "ember-crud",
+  "summary": "Ember CRUD",
+  "description": "The Ember CRUD library includes base Routes and various mixins to help you implement CRUD (Create, Read, Update, Delete) functionality in your Ember app.",
+  "homepage": "https://github.com/ryandjurovich/ember-crud",
+  "author": "Ryan Djurovich",
+  "version": "0.1.0",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "noty": "https://github.com/needim/noty.git#v2.2.2",
+    "bootbox": "https://github.com/makeusabrew/bootbox.git#v4.2.0"
+  },
+  "devDependencies": {
+    "bower": "~1.2",
+    "grunt": "~0.4.2",
+    "matchdep": "~0.3.0",
+    "load-grunt-config": "~0.7.0",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-es6-module-transpiler": "~0.6.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.3.0",
+    "grunt-ember-defeatureify": "~0.1.0",
+    "defeatureify": "~0.1.4"
+  }
+}
