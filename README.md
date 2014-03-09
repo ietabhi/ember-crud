@@ -4,8 +4,81 @@ The Ember CRUD library includes base Routes and various mixins to help you imple
 
 ## Dependencies
 
+* [ember](https://github.com/emberjs/ember.js)
+* [ember-data](https://github.com/emberjs/data)
+* [ember-i18n](https://github.com/jamesarosen/ember-i18n)
 * [bootbox](http://bootboxjs.com/)
 * [noty](http://ned.im/noty/)
+
+## Configuration
+
+* Add one of `dist/ember-crud*.js` to your app
+* Add [ember-i18n](https://github.com/jamesarosen/ember-i18n) translations file
+* Extend from base routes and/or include mixins
+* Configure `crud` variable in your routes
+
+### Example Translations
+
+    Ember.I18n.translations = {
+      'crud': {
+        'titles': {
+          'new': 'New {{model}}',
+          'edit': 'Edit {{model}}',
+        },
+        'create': {
+          'button': 'Add',
+          'success': '{{model}} created successfully.',
+          'error': 'Error creating {{model}}.',
+        },
+        'save': {
+          'button': 'Save Changes',
+          'success': '{{model}} saved successfully.',
+          'error': 'Error saving {{model}}.',
+        },
+        'delete': {
+          'button': 'Delete',
+          'confirm': 'Are you sure you want to delete {{model}} \'{{record}}\'?',
+          'success': '{{model}} deleted successfully.',
+          'error': 'Error deleting {{model}}.',
+        },
+        'draft': {
+          'button': 'Create Draft & Save',
+          'success': 'Draft created for {{model}} successfully.',
+          'error': 'Error creating draft for {{model}}.',
+        },
+        'publish': {
+          'button': 'Save & Publish',
+          'success': '{{model}} published successfully.',
+          'error': 'Error publishing {{model}}.',
+        },
+        'restore': {
+          'button': 'Restore',
+          'success': '{{model}} restored successfully.',
+          'error': 'Error restoring {{model}}.',
+        },
+        'cancel': {
+          'button': 'Cancel',
+        },
+      }
+    }
+
+### Example Route
+
+    import BaseRoute from "ember-crud/routes/edit";
+
+    export default BaseRoute.extend({
+        crud: {
+          model:      'post',
+          name: {
+            singular: 'Post',
+            plural:   'Posts',
+          },
+          routes: {
+            index:    'posts.index',
+            new:      'posts.new',
+          },
+        }
+    });
 
 ## What's Included
 

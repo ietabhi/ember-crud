@@ -83,7 +83,11 @@ define("ember-crud/routes/edit",
       Delete,
       {
         model: function(params) {
-          return this.store.find(this.get('crud.model'), params.id);
+          if (this.get('crud.model')) {
+            return this.store.find(this.get('crud.model'), params.id);
+          } else {
+            return this._super();   
+          }
         }
       }
     );
@@ -104,7 +108,11 @@ define("ember-crud/routes/list",
       Delete,
       {
         model: function() {
-          return this.store.find(this.get('crud.model'));
+          if (this.get('crud.model')) {
+            return this.store.find(this.get('crud.model'));
+          } else {
+            return this._super();   
+          }
         }
       }
     );
@@ -184,7 +192,7 @@ define("ember-crud/routes/mixins/delete",
     __exports__["default"] = Ember.Mixin.create(
       {
         actions: {
-          delete: function(entity, name) {
+          'delete': function(entity, name) {
             bootbox.confirm(
               Ember.I18n.t(
                 'crud.delete.confirm',
@@ -350,7 +358,11 @@ define("ember-crud/routes/new",
       Cancel,
       {
         model: function(params) {
-          return this.store.createRecord(this.get('crud.model'));
+          if (this.get('crud.model')) {
+            return this.store.createRecord(this.get('crud.model'));
+          } else {
+            return this._super();   
+          }
         },
         deactivate: function() {
           this.get('controller.model').rollback();
@@ -391,7 +403,11 @@ define("ember-crud/routes/tree",
       Delete,
       {
         model: function() {
-          return this.store.find(this.get('crud.model'));
+          if (this.get('crud.model')) {
+            return this.store.find(this.get('crud.model'));
+          } else {
+            return this._super();   
+          }
         }
       }
     );
@@ -406,7 +422,11 @@ define("ember-crud/routes/view",
       Setup,
       {
         model: function(params) {
-          return this.store.find(this.get('crud.model'), params.id);
+          if (this.get('crud.model')) {
+            return this.store.find(this.get('crud.model'), params.id);
+          } else {
+            return this._super(params);
+          }
         }
       }
     );
