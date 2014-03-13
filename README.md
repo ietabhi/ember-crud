@@ -2,6 +2,10 @@
 
 The Ember CRUD library includes base Routes and various mixins to help you implement CRUD (Create, Read, Update, Delete) functionality in your Ember app.
 
+## Getting Started
+
+The [Ember CRUD Guide](http://www.ryandjurovich.com/ember-crud/guide/) is a great way to get started using Ember CRUD.
+
 ## Dependencies
 
 * [ember](https://github.com/emberjs/ember.js)
